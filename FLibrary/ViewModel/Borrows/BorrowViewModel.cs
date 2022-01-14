@@ -148,6 +148,11 @@ namespace FLibrary.ViewModel.Borrows
         {
             try
             {
+                if(CurrentBorrow.Total == 0)
+                {
+                    MessageBox.Show("Total should be bigger than 1", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
                 string user_sql = "Select * From Member Where Id = '" + CurrentBorrow.MemberId + "'";
                 var user = DBServices.Query<Member>(user_sql).FirstOrDefault();
                 if (user != null)
