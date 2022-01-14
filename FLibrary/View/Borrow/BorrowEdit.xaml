@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="FLibrary.View.Borrow.BorrowEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:valid="clr-namespace:FLibrary.Validations"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800"
+             DataContext="{DynamicResource BorrowVM}">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="Slt_btn_save" BasedOn="{StaticResource MaterialDesignPaperLightButton}">
+            <Setter Property="IsEnabled" Value="False"/>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=cbc_member,Path=(Validation.HasError)}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=cbc_book,Path=(Validation.HasError)}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=tbx_dueDate,Path=(Validation.HasError)}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=tbx_total,Path=(Validation.HasError)}" Value="False"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="IsEnabled" Value="True"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="White" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Update Borrow" Margin="17 7 7 7" FontSize="16" FontWeight="SemiBold"/>
+        <ComboBox
+            MinWidth="290" Margin="15"
+            Grid.Row="1"
+            materialDesign:HintAssist.Hint="Choose Book"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            Name="cbc_book" 
+            DisplayMemberPath="Title" 
+            SelectedValuePath="Id" 
+            SelectedValue="{Binding Path=SelectBorrow.BookId}"
+            ItemsSource="{Binding Path=Books}">
+            <ComboBox.SelectedItem>
+                <Binding Path="SelectBorrow.BookId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <valid:EmptyRuleValidation ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+        <ComboBox
+            MinWidth="290" Margin="15"
+            Grid.Row="2"
+            materialDesign:HintAssist.Hint="Choose Member"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            Name="cbc_member" 
+            DisplayMemberPath="Name" 
+            SelectedValuePath="Id" 
+            SelectedValue="{Binding Path=SelectBorrow.MemberId}"
+            ItemsSource="{Binding Path=Members}">
+            <ComboBox.SelectedItem>
+                <Binding Path="SelectBorrow.MemberId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <valid:EmptyRuleValidation ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+        <DatePicker Grid.Row="3"  Style="{StaticResource MaterialDesignOutlinedDatePicker}" Name="tbx_dueDate" MinWidth="290" Margin="15"  materialDesign:HintAssist.Hint="Due Date" FontSize="14" SelectedDate="{Binding DueDate, StringFormat='dd-MM-yyyy'}">
+
+        </DatePicker>
+        <TextBox Grid.Row="4" Name="tbx_total" Style="{StaticResource MaterialDesignOutlinedTextBox}" MinWidth="290" Margin="15"  materialDesign:HintAssist.Hint="Total" FontSize="14">
+            <TextBox.Text>
+                <Binding Path="SelectBorrow.Total" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <valid:EmptyRuleValidation ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+            <Button x:Name="btn_save" Style="{StaticResource Slt_btn_save}" Content="Update" Width="{Binding ElementName=btn_cancel,Path=ActualWidth}" Command="{Binding UpdateCMD}" IsDefault="True" Padding="5"/>
+            <Button x:Name="btn_cancel" Margin="20 0" Content="Cancel" Style="{StaticResource MaterialDesignPaperLightButton}" Command="{Binding CancelCMD}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="FLibrary.View.Book.BookAdd"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:valid="clr-namespace:FLibrary.Validations"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800"
+             DataContext="{DynamicResource BookVM}">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="Slt_btn_save" BasedOn="{StaticResource MaterialDesignPaperLightButton}">
+            <Setter Property="IsEnabled" Value="False"/>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=tbx_title,Path=(Validation.HasError)}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=tbx_quantity,Path=(Validation.HasError)}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=cbc_author,Path=(Validation.HasError)}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=cbc_category,Path=(Validation.HasError)}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=tbx_state,Path=(Validation.HasError)}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=tbx_imageUrl,Path=(Validation.HasError)}" Value="False"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="IsEnabled" Value="True"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="White" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Add New Book" Margin="17 7 7 7" FontSize="16" FontWeight="SemiBold"/>
+        <TextBox Grid.Row="1" Name="tbx_title" Style="{StaticResource MaterialDesignOutlinedTextBox}" MinWidth="290" Margin="15"  materialDesign:HintAssist.Hint="Name of Book" FontSize="14">
+            <TextBox.Text>
+                <Binding Path="CurrentBook.Title" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <valid:EmptyRuleValidation ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ComboBox
+            MinWidth="290" Margin="15"
+            Grid.Row="2"
+            materialDesign:HintAssist.Hint="Choose Author"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            Name="cbc_author" 
+            DisplayMemberPath="AuthorName" 
+            SelectedValuePath="AuthorName" 
+            SelectedValue="{Binding Path=CurrentBook.Author}"
+            ItemsSource="{Binding Path=Authors}">
+            <ComboBox.SelectedItem>
+                <Binding Path="CurrentBook.Author" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <valid:EmptyRuleValidation ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+
+        <ComboBox
+            MinWidth="290" Margin="15"
+            Grid.Row="3"
+            materialDesign:HintAssist.Hint="Choose Category"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            Name="cbc_category" 
+            DisplayMemberPath="CategoryName" 
+            SelectedValuePath="CategoryName" 
+            SelectedValue="{Binding Path=CurrentBook.Category}"
+            ItemsSource="{Binding Path=Categories}">
+            <ComboBox.SelectedItem>
+                <Binding Path="CurrentBook.Category" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <valid:EmptyRuleValidation ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+        <TextBox Grid.Row="4" Name="tbx_quantity" Style="{StaticResource MaterialDesignOutlinedTextBox}" MinWidth="290" Margin="15"  materialDesign:HintAssist.Hint="Quantity of Book" FontSize="14">
+            <TextBox.Text>
+                <Binding Path="CurrentBook.Quantity" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <valid:EmptyRuleValidation ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Row="5" Name="tbx_state" Style="{StaticResource MaterialDesignOutlinedTextBox}" MinWidth="290" Margin="15"  materialDesign:HintAssist.Hint="State of Book" FontSize="14">
+            <TextBox.Text>
+                <Binding Path="CurrentBook.State" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <valid:EmptyRuleValidation ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Grid.Row="6" Name="tbx_imageUrl" Style="{StaticResource MaterialDesignOutlinedTextBox}" MinWidth="290" Margin="15"  materialDesign:HintAssist.Hint="ImageUrl of Book" FontSize="14">
+            <TextBox.Text>
+                <Binding Path="CurrentBook.ImageUrl" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <valid:EmptyRuleValidation ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+            <Button x:Name="btn_save" Style="{StaticResource Slt_btn_save}" Content="Save" Width="{Binding ElementName=btn_cancel,Path=ActualWidth}" Command="{Binding SaveCMD}" IsDefault="True" Padding="5"/>
+            <Button x:Name="btn_cancel" Margin="20 0" Content="Cancel" Style="{StaticResource MaterialDesignPaperLightButton}" Command="{Binding CancelCMD}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

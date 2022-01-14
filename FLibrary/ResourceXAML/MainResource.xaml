@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:viewmodel="clr-namespace:FLibrary.ViewModel" xmlns:viewmodel1="clr-namespace:FLibrary.ViewModel.Home" xmlns:viewmodel11="clr-namespace:FLibrary.ViewModel.Books" xmlns:viewmodel111="clr-namespace:FLibrary.ViewModel.Members" xmlns:viewmodel1111="clr-namespace:FLibrary.ViewModel.Borrows" xmlns:viewmodel11111="clr-namespace:FLibrary.ViewModel.Categories" xmlns:viewmodel111111="clr-namespace:FLibrary.ViewModel.Authors" xmlns:viewmodel1111111="clr-namespace:FLibrary.ViewModel.Accounts">
+    <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
+    <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
+    <viewmodel1:HomeViewModel x:Key="HomeVM"></viewmodel1:HomeViewModel>
+    <viewmodel11:BookViewModel x:Key="BookVM"></viewmodel11:BookViewModel>
+    <viewmodel11:BookAddViewModel x:Key="BookAddVM"></viewmodel11:BookAddViewModel>
+    <viewmodel111:MemberViewModel x:Key="MemberVM"></viewmodel111:MemberViewModel>
+    <viewmodel1111:BorrowViewModel x:Key="BorrowVM"></viewmodel1111:BorrowViewModel>
+    <viewmodel11111:CategoryViewModel x:Key="CategoryVM"></viewmodel11111:CategoryViewModel>
+    <viewmodel111111:AuthorViewModel x:Key="AuthorVM"></viewmodel111111:AuthorViewModel>
+    <viewmodel1111111:AccountViewModel x:Key="AccountVM"></viewmodel1111111:AccountViewModel>
+</ResourceDictionary>

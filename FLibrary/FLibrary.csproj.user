@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Account\AccountAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Account\AccountDelete.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Account\AccountEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Account\AccountUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Author\AuthorAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Author\AuthorDelete.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Author\AuthorEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Author\AuthorUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Book\BookAddUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Book\BookDeleteUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Book\BookEditUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Book\BookUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Borrow\BorrowAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Borrow\BorrowDelete.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Borrow\BorrowEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Borrow\BorrowUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Category\CategoryAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Category\CategoryDelete.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Category\CategoryEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Category\CategoryUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Home\HomeUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Member\MemberAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Member\MemberDelete.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Member\MemberEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Member\MemberUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceXAML\MainResource.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Account\AccountAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Account\AccountDelete.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Account\AccountEdit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Account\AccountUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Author\AuthorAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Author\AuthorDelete.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Author\AuthorEdit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Author\AuthorUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Book\BookAddUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Book\BookDeleteUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Book\BookEditUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Book\BookUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Borrow\BorrowAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Borrow\BorrowDelete.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Borrow\BorrowEdit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Borrow\BorrowUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Category\CategoryAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Category\CategoryDelete.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Category\CategoryEdit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Category\CategoryUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Home\HomeUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Member\MemberAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Member\MemberDelete.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Member\MemberEdit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Member\MemberUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
