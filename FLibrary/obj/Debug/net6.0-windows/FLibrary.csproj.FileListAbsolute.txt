@@ -95,3 +95,5 @@ C:\C#\FLibrary\FLibrary\obj\Debug\net6.0-windows\View\Account\AccountUC.g.cs
 C:\C#\FLibrary\FLibrary\obj\Debug\net6.0-windows\View\Account\AccountAdd.baml
 C:\C#\FLibrary\FLibrary\obj\Debug\net6.0-windows\View\Account\AccountEdit.baml
 C:\C#\FLibrary\FLibrary\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll
+C:\C#\FLibrary\FLibrary\obj\Debug\net6.0-windows\View\Borrow\BorrowReturn.g.cs
+C:\C#\FLibrary\FLibrary\obj\Debug\net6.0-windows\View\Borrow\BorrowReturn.baml

@@ -55,6 +55,9 @@
     <Compile Update="View\Borrow\BorrowEdit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Borrow\BorrowReturn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Borrow\BorrowUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -139,6 +142,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Borrow\BorrowEdit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Borrow\BorrowReturn.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Borrow\BorrowUC.xaml">

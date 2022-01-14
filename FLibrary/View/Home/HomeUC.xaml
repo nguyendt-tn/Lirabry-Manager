@@ -88,7 +88,7 @@
                     </Grid.ColumnDefinitions>
                     <materialDesign:PackIcon Grid.Row="0" Grid.Column="0" Kind="BookArrowDown" Width="Auto" Height="Auto" Foreground="White" VerticalAlignment="Center" Margin="10 10 7 7"/>
                     <TextBlock Grid.Row="0" Grid.Column="1" Text="Total Returned" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Left" Foreground="White"/>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 0 0 30" Text="0" VerticalAlignment="Center" FontSize="47" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="White"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 0 0 30" Text="{Binding TotalReturn}" VerticalAlignment="Center" FontSize="47" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="White"/>
                 </Grid>
             </materialDesign:Card>
         </Grid>

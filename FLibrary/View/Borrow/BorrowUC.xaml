@@ -53,6 +53,11 @@
             <Setter Property="Padding" Value="5 0 5 0"/>
             <Setter Property="Margin" Value="5 0"/>
         </Style>
+        <Style x:Key="Stl_btn_return" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="Padding" Value="5 0 5 0"/>
+            <Setter Property="Margin" Value="5 0"/>
+        </Style>
     </UserControl.Resources>
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -186,6 +191,9 @@
                                         </Button>
                                         <Button Style="{StaticResource Stl_btn_delete}" MinHeight="0" Command="{Binding RelativeSource={RelativeSource AncestorType=ListView},Path=DataContext.DeleteBorrowCMD}" CommandParameter="{Binding}">
                                             <materialDesign:PackIcon Kind="Delete" Width="19" Height="19"/>
+                                        </Button>
+                                        <Button Style="{StaticResource Stl_btn_return}" MinHeight="0" Command="{Binding RelativeSource={RelativeSource AncestorType=ListView},Path=DataContext.ReturnBorrowCMD}" CommandParameter="{Binding}">
+                                            <materialDesign:PackIcon Kind="ArrowUp" Width="19" Height="19"/>
                                         </Button>
                                     </StackPanel>
                                 </DataTemplate>

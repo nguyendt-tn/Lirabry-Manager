@@ -15,6 +15,7 @@ namespace FLibrary.ViewModel.Home
         private int _totalBook;
         private int _totalMember;
         private int _totalBorrow;
+        private int _totalReturn;
 
         public int TotalBook
         {
@@ -31,6 +32,11 @@ namespace FLibrary.ViewModel.Home
             get { return _totalBorrow; }
             set { _totalBorrow = value; }
         }
+        public int TotalReturn
+        {
+            get { return _totalReturn; }
+            set { _totalReturn = value; }
+        }
 
         public SQLiteConnection DBServices = new DbHelper().GetConnection();
 
@@ -39,6 +45,7 @@ namespace FLibrary.ViewModel.Home
             LoadTotalBook();
             LoadTotalMember();
             LoadTotalBorrow();
+            LoadTotalReturn();
         }
         public void LoadTotalBook()
         {
@@ -54,9 +61,15 @@ namespace FLibrary.ViewModel.Home
         }
         public void LoadTotalBorrow()
         {
-            string query = "SELECT COUNT(*) From Borrow";
+            string query = "SELECT COUNT(*) From Borrow Where IsReturn='0'";
             var total = DBServices.ExecuteScalar<int>(query);
             TotalBorrow = total;
+        }
+        public void LoadTotalReturn()
+        {
+            string query = "SELECT COUNT(*) From Borrow Where IsReturn='1'";
+            var total = DBServices.ExecuteScalar<int>(query);
+            TotalReturn = total;
         }
     }
 }

@@ -31,7 +31,7 @@ namespace FLibrary.ViewModel.Books
         }
         #endregion
 
-        #region
+        #region [Collections]
         private ObservableCollection<Author> _authors;
 
         public ObservableCollection<Author> Authors
@@ -41,7 +41,7 @@ namespace FLibrary.ViewModel.Books
         }
         #endregion
 
-        #region
+        #region [Collections]
         private ObservableCollection<Category> _cagegories;
 
         public ObservableCollection<Category> Categories
@@ -90,9 +90,8 @@ namespace FLibrary.ViewModel.Books
         public BookViewModel() {
             CurrentBook = new Book();
             LoadBook();
-            LoadAuthor();
-            LoadCategories();
         }
+
 
 
         public void LoadBook()
@@ -103,6 +102,8 @@ namespace FLibrary.ViewModel.Books
                 Books = new ObservableCollection<Book>(data);
             else
                 Books?.Clear();
+            LoadAuthor();
+            LoadCategories();
         }
         public void LoadAuthor()
         {
